@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CurrencyFeedApp.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -13,6 +14,8 @@ namespace CurrencyFeedApp
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            config.DependencyResolver = new UnityResolver(UnityConfig.Container);
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

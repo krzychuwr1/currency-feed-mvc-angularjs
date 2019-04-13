@@ -22,9 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }
-
 td {
     padding: 4px;
     border-width: 1px;
-    border:solid;
+    border: solid;
 }
