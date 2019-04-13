@@ -1,4 +1,23 @@
-﻿<div ng-controller="CurrencyFeedCtrl">
+﻿<div ng-controller="CurrencyFeedCtrl" ng-cloak>
     <button ng-click="loadData()">Get Data</button>
-    <div>{{data}}</div>
+    <table class="currency-rate-table" ng-if="data">
+        <thead>
+            <tr>
+                <th>date</th>
+                <th>USD</th>
+                <th>EUR</th>
+            </tr>
+        </thead>
+        <tr ng-repeat="(date, singleExchangeRate) in data.rates">
+            <td>
+                {{date}}
+            </td>
+            <td>
+                {{singleExchangeRate.USD}}
+            </td>
+            <td>
+                {{singleExchangeRate.EUR}}
+            </td>
+        </tr>
+    </table>
 </div>
